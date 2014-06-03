@@ -1,0 +1,55 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+{% block content%}
+<h1> QR Code STL Generator </h1>
+<form action="" method="post" name="qr_code_generator">
+  {{form.hidden_tag()}}
+  {% for error in form.errors.csrf_token %}
+    <span style="color: red;">[{{error}}]</span>
+  {% endfor %}
+
+  <p>
+    What text/url do you want the QR code to represent?<br>
+    {% for error in form.errors.qr_text %}
+      <span style="color: red;">{{error}}</span><br>
+    {% endfor %} 
+    {{form.qr_text(size=50)}}<br>
+  </p>
+  <p>
+    Do you want the black to be in or out?<br>
+    {{form.in_or_out}} out? <br>
+  </p>
+  <p>
+    What border size do you want?<br>
+    {% for error in form.errors.border_size %}
+      <span style="color: red;">{{error}}</span><br>
+    {% endfor %} 
+    {{form.border_size(size=2)}} <br>
+  </p>
+  <p>
+    What length / width do you want the QR code to be (in mm)?<br>
+    {% for error in form.errors.length_width %}
+      <span style="color: red;">{{error}}</span><br>
+    {% endfor %} 
+    {{form.length_width(size=4)}} mm<br>
+  </p>
+  <p>
+    What height / depth do you want the QR code to have (as a percentage of the length / width)?<br>
+    {% for error in form.errors.height %}
+      <span style="color: red;">{{error}}</span><br>
+    {% endfor %} 
+    {{form.height(size=5)}} % <br>
+  </p>
+  <p>
+    What size base do you want the QR code to have (as a percentage of the height)?<br>
+    {% for error in form.errors.base_percentage %}
+      <span style="color: red;">{{error}}</span><br>
+    {% endfor %} 
+    {{form.base_percentage(size=5)}} % <br>
+  </p>
+  <p>
+    <input type="submit" value="Download QR Code STL">
+  </p>
+
+</form>
+{% endblock %}
