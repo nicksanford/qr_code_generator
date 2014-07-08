@@ -8,7 +8,7 @@ def form():
     if form.validate_on_submit():
         # This should be done with ajax
         flash("Cool, get you that STL in just a sec...")
-        stl = create_qr(str(form.qr_text.data), bool(form.in_or_out.data), int(form.border_size.data),
+        stl = create_qr(str(form.qr_text.data), str(form.in_or_out.data), int(form.border_size.data),
                 float(form.length_width.data), float(form.height.data), float(form.base_percentage.data)
                 )
 	print "Got after stl"

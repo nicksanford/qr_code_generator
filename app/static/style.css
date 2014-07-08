@@ -1,0 +1,44 @@
+html {
+  min-width: 670px;
+}
+body {
+  margin: 0;
+}
+header {
+  background: #ee352a;
+  text-align: center;
+  height: 50px;
+  line-height: 1.5;
+}
+.wrap {
+  margin: auto;
+  text-align: left;
+  width: 70%;
+  min-width: 70%;
+}
+
+form {
+  position: relative;
+  width: 450px;
+  margin: auto;
+
+}
+input[type=submit] {
+  margin-left: 320px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+  width: 450px;
+  line-height: 3.5;
+  border-style: ridge;
+  border-radius: 5px;
+  padding: 10px;
+  padding-top: 0px;
+}
+
+ul li {
+  display: block;
+  vertical-align: top;
+}

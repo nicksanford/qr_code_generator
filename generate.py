@@ -37,7 +37,7 @@ def create_qr(qr_code_string, out_or_in, border_size, length_width, height, base
     return stl
 
 def out_or_in_method(out_or_in, img):
-    if out_or_in:
+    if out_or_in == "out":
         raw_img = img.convert("RGB")
         inverted_image = PIL.ImageOps.invert(raw_img)
         inverted_image = inverted_image.convert("1")
