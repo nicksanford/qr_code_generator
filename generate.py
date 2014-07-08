@@ -33,7 +33,7 @@ def create_qr(qr_code_string, out_or_in, border_size, length_width, height, base
 
     stl = numpy2stl(A, "qr.stl", scale=height, mask_val=0.0, solid=True, 
             min_thickness_percent=base_percentage, max_width=length_width, 
-            max_depth=length_width)
+            max_depth=length_width, max_height=1000)
     return stl
 
 def out_or_in_method(out_or_in, img):
